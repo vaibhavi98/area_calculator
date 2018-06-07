@@ -8,13 +8,17 @@ import java.util.Scanner;
 
 
 /**
- *
+ * The class contains various methods to calculate surface area of different solid figures such as cube, cuboid, sphere, cone, triangular prism, cylinder.
  * @author Roopali
  */
 public class ThreeDimension 
 {
+     /**
+     * The method calculates surface area of a cube taking the side as input.
+     * @param inp is a Scanner object used to take the input for the side of a cube. 
+     */
     
-    static void Calc_SArea_Cube(Scanner inp)
+    public static void calc_SArea_Cube(Scanner inp)
     {
         float side,cube_sarea;
         System.out.println("Enter the side of the Cube :");
@@ -23,7 +27,12 @@ public class ThreeDimension
         System.out.println("The Surface Area of the cube is : "+cube_sarea);
     }
     
-    static void Calc_SArea_Cuboid(Scanner inp)
+     /**
+     * The method calculates surface area of a cuboid taking length, width and height as input.
+     * @param inp is a Scanner object used to take the input for length, width and height of a cuboid. 
+     */
+    
+    public static void calc_SArea_Cuboid(Scanner inp)
     {
         float length,width,height,cuboid_sarea;
         System.out.println("Enter the Length of the Cuboid");
@@ -35,7 +44,13 @@ public class ThreeDimension
         cuboid_sarea=(float)((2*length*height)+(2*length*width)+(2*width*height));
         System.out.println("The Surface Area of Cuboid is : "+cuboid_sarea);
     }
-    static void Calc_SArea_Triangular_Prism(Scanner inp)
+    
+    /**
+     * The method calculates surface area of a triangular prism taking the height, width and base as input.
+     * @param inp is a Scanner object used to take the input for height, width and base of a triangular prism. 
+     */
+    
+      public static void calc_SArea_Triangular_Prism(Scanner inp)
     {
         float base,height,width,hypotaneous,larea,basearea,perimeter,prism_sarea;
         System.out.println("Enter the Base of the prism :");
@@ -52,8 +67,12 @@ public class ThreeDimension
         System.out.println("The Surface Area of prism is :"+prism_sarea);
     }
     
+        /**
+     * The method calculates surface area of a cylinder taking the height and radius of base as input.
+     * @param inp is a Scanner object used to take the input for height and radius of base of a cylinder. 
+     */
     
-    static void Calc_SArea_Cylinder(Scanner inp)
+    public static void calc_SArea_Cylinder(Scanner inp)
     {
         float radius,height,cylinder_sarea;
         System.out.println("Enter the Radius of the base of cylinder :");
@@ -64,9 +83,12 @@ public class ThreeDimension
         System.out.println("The Surface Area of Cylinder is :"+cylinder_sarea);
     }
     
+    /**
+     * The method calculates surface area of a cone taking height and radius of the base as input.
+     * @param inp is a Scanner object used to take the input for height and radius of the base of a cone. 
+     */
     
-
-    static void Calc_SArea_Cone(Scanner inp)
+    public static void calc_SArea_Cone(Scanner inp)
     {
         float height,slant_edge,radius,cone_sarea;
         System.out.println("Enter the Radius of the base of the Cone :");
@@ -78,7 +100,12 @@ public class ThreeDimension
         System.out.println("The Surface Area of Cone is :"+cone_sarea);
     }
     
-    static void Calc_SArea_Sphere(Scanner inp)
+    /**
+     * The method calculates surface area of a sphere taking the radius as input.
+     * @param inp is a Scanner object used to take the input for the radius of a sphere. 
+     */
+    
+    public static void calc_SArea_Sphere(Scanner inp)
     {
         float radius,sphere_sarea;
         System.out.println("Enter the Radius of the Sphere:");
@@ -87,8 +114,12 @@ public class ThreeDimension
         System.out.println("The Surface Area of the Sphere is :"+sphere_sarea);
     }
     
+    /**
+     * The method contains menu driven code to either continue calculation of area, surface area, volume or exit.
+     * @param inp is a Scanner object used to take the input for the side of a cube. 
+     */
     
-     static void Redirect(Scanner inp)
+     public static void redirect(Scanner inp)
     {
         int ch;
         System.out.println("What you want to do :");
@@ -104,10 +135,15 @@ public class ThreeDimension
                  System.exit(0);
             default:
                  System.out.println("Invalid Entry");
-                 Redirect(inp);
+                 redirect(inp);
                  
         }  
     }
+     
+     /**
+      * This main method displays a menu used for selection of calculation of surface area of desired solid figure.
+      * @param args 
+      */
      
     public static void main(String args[])
     {
@@ -128,25 +164,25 @@ public class ThreeDimension
        switch(ch)
        {
            case 1:
-               Calc_SArea_Cube(inp);
+               calc_SArea_Cube(inp);
                break;
            case 2:
-               Calc_SArea_Cuboid(inp);
+               calc_SArea_Cuboid(inp);
                break;
            case 3:
-               Calc_SArea_Triangular_Prism(inp);
+               calc_SArea_Triangular_Prism(inp);
                break;
            case 4:
-               Calc_SArea_Cylinder(inp);
+               calc_SArea_Cylinder(inp);
                break;
            case 5:
-               Calc_SArea_Cone(inp);
+               calc_SArea_Cone(inp);
                break;
            case 6:
-               Calc_SArea_Sphere(inp);
+               calc_SArea_Sphere(inp);
                break;
            case 7:
-               Redirect(inp);
+               redirect(inp);
                break;
            default:
                System.out.println("Wrong Value Entered! Please Try Again.");
