@@ -18,7 +18,7 @@ public class ThreeDimension
      * @param inp is a Scanner object used to take the input for the side of a cube. 
      */
     
-    public static void calc_SArea_Cube(Scanner inp)
+    public static void Calc_SArea_Cube(Scanner inp)
     {
         float side,cube_sarea;
         System.out.println("Enter the side of the Cube :");
@@ -32,7 +32,7 @@ public class ThreeDimension
      * @param inp is a Scanner object used to take the input for length, width and height of a cuboid. 
      */
     
-    public static void calc_SArea_Cuboid(Scanner inp)
+    public static void Calc_SArea_Cuboid(Scanner inp)
     {
         float length,width,height,cuboid_sarea;
         System.out.println("Enter the Length of the Cuboid");
@@ -50,7 +50,7 @@ public class ThreeDimension
      * @param inp is a Scanner object used to take the input for height, width and base of a triangular prism. 
      */
     
-      public static void calc_SArea_Triangular_Prism(Scanner inp)
+      public static void Calc_SArea_Triangular_Prism(Scanner inp)
     {
         float base,height,width,hypotaneous,larea,basearea,perimeter,prism_sarea;
         System.out.println("Enter the Base of the prism :");
@@ -72,7 +72,7 @@ public class ThreeDimension
      * @param inp is a Scanner object used to take the input for height and radius of base of a cylinder. 
      */
     
-    public static void calc_SArea_Cylinder(Scanner inp)
+    public static void Calc_SArea_Cylinder(Scanner inp)
     {
         float radius,height,cylinder_sarea;
         System.out.println("Enter the Radius of the base of cylinder :");
@@ -88,7 +88,7 @@ public class ThreeDimension
      * @param inp is a Scanner object used to take the input for height and radius of the base of a cone. 
      */
     
-    public static void calc_SArea_Cone(Scanner inp)
+    public static void Calc_SArea_Cone(Scanner inp)
     {
         float height,slant_edge,radius,cone_sarea;
         System.out.println("Enter the Radius of the base of the Cone :");
@@ -105,7 +105,7 @@ public class ThreeDimension
      * @param inp is a Scanner object used to take the input for the radius of a sphere. 
      */
     
-    public static void calc_SArea_Sphere(Scanner inp)
+    public static void Calc_SArea_Sphere(Scanner inp)
     {
         float radius,sphere_sarea;
         System.out.println("Enter the Radius of the Sphere:");
@@ -119,7 +119,7 @@ public class ThreeDimension
      * @param inp is a Scanner object used to take the input for the side of a cube. 
      */
     
-     public static void redirect(Scanner inp)
+     public static void Redirect(Scanner inp)
     {
         int ch;
         System.out.println("What you want to do :");
@@ -135,7 +135,7 @@ public class ThreeDimension
                  System.exit(0);
             default:
                  System.out.println("Invalid Entry");
-                 redirect(inp);
+                 Redirect(inp);
                  
         }  
     }
@@ -164,25 +164,25 @@ public class ThreeDimension
        switch(ch)
        {
            case 1:
-               calc_SArea_Cube(inp);
+               Calc_SArea_Cube(inp);
                break;
            case 2:
-               calc_SArea_Cuboid(inp);
+               Calc_SArea_Cuboid(inp);
                break;
            case 3:
-               calc_SArea_Triangular_Prism(inp);
+               Calc_SArea_Triangular_Prism(inp);
                break;
            case 4:
-               calc_SArea_Cylinder(inp);
+               Calc_SArea_Cylinder(inp);
                break;
            case 5:
-               calc_SArea_Cone(inp);
+               Calc_SArea_Cone(inp);
                break;
            case 6:
-               calc_SArea_Sphere(inp);
+               Calc_SArea_Sphere(inp);
                break;
            case 7:
-               redirect(inp);
+               Redirect(inp);
                break;
            default:
                System.out.println("Wrong Value Entered! Please Try Again.");
