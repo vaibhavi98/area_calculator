@@ -15,103 +15,84 @@ public class ThreeDimension
 {
      /**
      * The method calculates surface area of a cube taking the side as input.
-     * @param inp is a Scanner object used to take the input for the side of a cube. 
+     * @param side is used as the length of a side of cube 
+     * @return This returns the surface area of cube with the given side  
      */
     
-    public static void Calc_SArea_Cube(Scanner inp)
+    public static double Calc_SArea_Cube(double side)
     {
-        float side,cube_sarea;
-        System.out.println("Enter the side of the Cube :");
-        side = inp.nextFloat();
-        cube_sarea=(float)(6*side*side);
-        System.out.println("The Surface Area of the cube is : "+cube_sarea);
+        return (double)(6*side*side);
+  
     }
     
      /**
      * The method calculates surface area of a cuboid taking length, width and height as input.
-     * @param inp is a Scanner object used to take the input for length, width and height of a cuboid. 
+     * @param length used as length of the cuboid.
+     * @param width used as width of the cuboid.
+     * @param height used as height of the cuboid. 
+     * @return the calculated surface area of the cuboid. 
      */
     
-    public static void Calc_SArea_Cuboid(Scanner inp)
+    public static double Calc_SArea_Cuboid(double length, double width, double height)
     {
-        float length,width,height,cuboid_sarea;
-        System.out.println("Enter the Length of the Cuboid");
-        length=inp.nextFloat();
-        System.out.println("Enter the Width of the Cuboid");
-        width=inp.nextFloat();
-        System.out.println("Enter the Height of the Cuboid");
-        height=inp.nextFloat();
-        cuboid_sarea=(float)((2*length*height)+(2*length*width)+(2*width*height));
-        System.out.println("The Surface Area of Cuboid is : "+cuboid_sarea);
+      
+        return (double)((2*length*height)+(2*height*width)+(2*width*length));
     }
     
     /**
      * The method calculates surface area of a triangular prism taking the height, width and base as input.
-     * @param inp is a Scanner object used to take the input for height, width and base of a triangular prism. 
+     * @param base is the base of the triangular prism .
+     * @param height is the height of the triangular prism.
+     * @param width is the width of the prism.
+     * @return the surface area of the prism 
      */
     
-      public static void Calc_SArea_Triangular_Prism(Scanner inp)
+      public static double Calc_SArea_Triangular_Prism(double base, double height, double width)
     {
-        float base,height,width,hypotaneous,larea,basearea,perimeter,prism_sarea;
-        System.out.println("Enter the Base of the prism :");
-        base=inp.nextFloat();
-        System.out.println("Enter the Height of the prism :");
-        height=inp.nextFloat();
-        System.out.println("Enter the Width of the prism :");
-        width=inp.nextFloat();
-        hypotaneous=(float)(Math.sqrt((base*base)+(height*height)));
-        perimeter=(float)(height+base+hypotaneous);
-        larea=(float)(perimeter*width);
-        basearea=(float)(0.5*base*height);
-        prism_sarea=(float)(larea+(2*basearea));
-        System.out.println("The Surface Area of prism is :"+prism_sarea);
+        
+        double hypotaneous, perimeter,larea, basearea;
+        hypotaneous=(double)(Math.sqrt((base*base)+(height*height)));
+        perimeter=(double)(height+base+hypotaneous);
+        larea=(double)(perimeter*width);
+        basearea=(double)(0.5*base*height);
+        return (double)(larea+(2*basearea));
     }
     
         /**
      * The method calculates surface area of a cylinder taking the height and radius of base as input.
-     * @param inp is a Scanner object used to take the input for height and radius of base of a cylinder. 
+     * @param r is used as the radius of the cylinder.
+     * @param h is used as the height of the cylinder.
+     * @return  the surface area of the cylinder.
      */
     
-    public static void Calc_SArea_Cylinder(Scanner inp)
+    public static double Calc_SArea_Cylinder(double r, double h)
     {
-        float radius,height,cylinder_sarea;
-        System.out.println("Enter the Radius of the base of cylinder :");
-        radius=inp.nextFloat();
-        System.out.println("Enter the Height of the cylinder:");
-        height=inp.nextFloat();
-        cylinder_sarea=(float)((2*3.14159*radius*height)+(2*3.14159*radius*radius));
-        System.out.println("The Surface Area of Cylinder is :"+cylinder_sarea);
+        return (double)((2*3.14159*r*h)+(2*3.14159*r*r));
     }
     
     /**
      * The method calculates surface area of a cone taking height and radius of the base as input.
-     * @param inp is a Scanner object used to take the input for height and radius of the base of a cone. 
+     * @param radius used as the radius of the cone.
+     * @param height used as the height of the cone.
+     * @return the surface area of the cone calculated given the radius and height. 
      */
     
-    public static void Calc_SArea_Cone(Scanner inp)
+    public static double Calc_SArea_Cone(double radius, double height)
     {
-        float height,slant_edge,radius,cone_sarea;
-        System.out.println("Enter the Radius of the base of the Cone :");
-        radius=inp.nextFloat();
-        System.out.println("Enter the height of the Cone :");
-        height=inp.nextFloat();
-        slant_edge=(float)(Math.sqrt((radius*radius)+(height*height)));
-        cone_sarea=(float)((3.14159*radius*radius)+(3.14159*radius*slant_edge));
-        System.out.println("The Surface Area of Cone is :"+cone_sarea);
+        double slant_edge;
+        slant_edge=(double)(Math.sqrt((radius*radius)+(height*height)));
+        return (double)((3.14159*radius*radius)+(3.14159*radius*slant_edge));
     }
     
     /**
      * The method calculates surface area of a sphere taking the radius as input.
-     * @param inp is a Scanner object used to take the input for the radius of a sphere. 
+     * @param radius is the radius of the sphere.
+     * @return the surface area of the sphere given the radius..
      */
     
-    public static void Calc_SArea_Sphere(Scanner inp)
+    public static double Calc_SArea_Sphere(double radius)
     {
-        float radius,sphere_sarea;
-        System.out.println("Enter the Radius of the Sphere:");
-        radius=inp.nextFloat();
-        sphere_sarea=(float)(4*3.14159*radius*radius);
-        System.out.println("The Surface Area of the Sphere is :"+sphere_sarea);
+        return (double)(4*3.14159*radius*radius);
     }
     
     /**
@@ -163,29 +144,59 @@ public class ThreeDimension
        ch=inp.nextInt();
        switch(ch)
        {
-           case 1:
-               Calc_SArea_Cube(inp);
-               break;
-           case 2:
-               Calc_SArea_Cuboid(inp);
-               break;
-           case 3:
-               Calc_SArea_Triangular_Prism(inp);
-               break;
-           case 4:
-               Calc_SArea_Cylinder(inp);
-               break;
-           case 5:
-               Calc_SArea_Cone(inp);
-               break;
-           case 6:
-               Calc_SArea_Sphere(inp);
-               break;
+           case 1:  double side, cube_sarea;
+                    System.out.println("Enter the side of the Cube :");
+                    side = inp.nextFloat();
+                    cube_sarea= Calc_SArea_Cube(side);
+                    System.out.println("The Surface Area of the cube is : "+cube_sarea);
+                    break;
+           case 2:  double length,width,height,cuboid_sarea;
+                    System.out.println("Enter the Length of the Cuboid");
+                    length=inp.nextFloat();
+                    System.out.println("Enter the Width of the Cuboid");
+                    width=inp.nextFloat();
+                    System.out.println("Enter the Height of the Cuboid");
+                    height=inp.nextFloat();
+                    cuboid_sarea= Calc_SArea_Cuboid(length, width, height);
+                    System.out.println("The Surface Area of Cuboid is : "+cuboid_sarea);
+                    break;
+           case 3:  double b,h,w,prism_sarea;
+                    System.out.println("Enter the Base of the prism :");
+                    b=inp.nextFloat();
+                    System.out.println("Enter the Height of the prism :");
+                    h=inp.nextFloat();
+                    System.out.println("Enter the Width of the prism :");
+                    w=inp.nextFloat();
+                    prism_sarea= Calc_SArea_Triangular_Prism(b, h, w);
+                    System.out.println("The Surface Area of prism is :"+prism_sarea);
+                    break;
+           case 4:  double radius1,height1,cylinder_sarea;
+                    System.out.println("Enter the Radius of the base of cylinder :");
+                    radius1=inp.nextFloat();
+                    System.out.println("Enter the Height of the cylinder:");
+                    height1=inp.nextFloat();
+                    cylinder_sarea= Calc_SArea_Cylinder(radius1, height1);
+                    System.out.println("The Surface Area of Cylinder is :"+cylinder_sarea);
+                    break;
+           case 5:  double height2,radius2,cone_sarea;
+                    System.out.println("Enter the Radius of the base of the Cone :");
+                    radius2=inp.nextFloat();
+                    System.out.println("Enter the height of the Cone :");
+                    height2=inp.nextFloat();
+                    cone_sarea= Calc_SArea_Cone(radius2, height2);
+                    System.out.println("The Surface Area of Cone is :"+cone_sarea);
+                    break;
+           case 6:  double radius3,sphere_sarea;
+                    System.out.println("Enter the Radius of the Sphere:");
+                    radius3=inp.nextFloat();
+                    sphere_sarea= Calc_SArea_Sphere(radius3);
+                    System.out.println("The Surface Area of the Sphere is :"+sphere_sarea);
+                    break;
            case 7:
-               Redirect(inp);
-               break;
+                    Redirect(inp);
+                    break;
            default:
-               System.out.println("Wrong Value Entered! Please Try Again.");
+                    System.out.println("Wrong Value Entered! Please Try Again.");
         }
        }while(ch!=7);
 
