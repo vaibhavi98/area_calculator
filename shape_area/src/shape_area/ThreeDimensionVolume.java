@@ -69,7 +69,7 @@ public class ThreeDimensionVolume {
      */
     public static double calcVol_Cone(double radius,double height)
     {
-        double cone_vol=(double)((1/3)*(3.14159*radius*radius*height));
+        double cone_vol=(double)((0.33)*(3.14159*radius*radius*height));
         return cone_vol;
     }
     
@@ -80,7 +80,7 @@ public class ThreeDimensionVolume {
      */
     public static double calcVol_Sphere(double radius)
     {
-        double sphere_vol=(double)((4/3)*(3.14159*radius*radius));
+        double sphere_vol=(double)((1.33)*(3.14159*radius*radius));
         return sphere_vol;
     }
 
