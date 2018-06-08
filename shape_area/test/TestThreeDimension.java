@@ -14,7 +14,7 @@ import shape_area.ThreeDimension;
 
 /**
  *
- * @author User
+ * @author Roopali
  */
 public class TestThreeDimension {
     ThreeDimension thd;
