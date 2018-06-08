@@ -8,81 +8,88 @@ package shape_area;
 import java.util.Scanner;
 
 /**
- *
+ * ThreeDimensionVolume calculates the volume of different shapes
  * @author Vivek
  */
 public class ThreeDimensionVolume {
-    
-    static void CalcVol_Cube(Scanner inp)
+    /**
+     * CalcVol_Cube is a method used to find the volume of cube
+     * @param side is used to accept the side value  
+     * @return is used to return the calculated value
+     */
+    public static double calcVol_Cube(double side)
     {
-        float side,cube_vol;
-        System.out.println("Enter the side of the Cube :");
-        side = inp.nextFloat();
-        cube_vol=(float)(side*side*side);
-        System.out.println("The Volume of the cube is : "+cube_vol);
+        double cube_vol=(double)(side*side*side);
+        return cube_vol;
     }
     
-    
-    static void CalcVol_Cuboid(Scanner inp)
+    /**
+     * calcVol_Cuboid is a method used to find the volume of Cuboid
+     * @param length is used to accept the length value  
+     * @param width is used to accept the width value
+     * @param height is used to accept the height value
+     * @return is used to return the calculated value
+     */
+    public static double calcVol_Cuboid(double length, double width, double height)
     {
-        float length,width,height,cuboid_vol;
-        System.out.println("Enter the Length of the Cuboid");
-        length=inp.nextFloat();
-        System.out.println("Enter the Width of the Cuboid");
-        width=inp.nextFloat();
-        System.out.println("Enter the Height of the Cuboid");
-        height=inp.nextFloat();
-        cuboid_vol=(float)(length*width*height);
-        System.out.println("The Volume of Cuboid is : "+cuboid_vol);
+        double cuboid_vol=(double)(length*width*height);
+        return cuboid_vol;
     }
     
-    static void CalcVol_Triangular_Prism(Scanner inp)
+    /**
+     * CalcVol_Triangular_Prism is a method used to find the volume of Triangular Prism
+     * @param base is used to accept the base value 
+     * @param height is used to accept the height value
+     * @param width is used to accept the width value
+     * @return is used to return the calculated value 
+     */
+    public static double calcVol_Triangular_Prism(double base, double height, double width)
     {
-         float base,height,width,basearea,prism_vol;
-        System.out.println("Enter the Base of the prism :");
-        base=inp.nextFloat();
-        System.out.println("Enter the Height of the prism :");
-        height=inp.nextFloat();
-        System.out.println("Enter the Width of the prism :");
-        width=inp.nextFloat();
-        basearea=(float)(0.5*base*height);
-        prism_vol=(float)(width*basearea);
-        System.out.println("The Volume of prism is :"+prism_vol);
+        double basearea=(double)(0.5*base*height);
+        double prism_vol=(double)(width*basearea);
+        return prism_vol;
     }
     
-    static void CalcVol_Cylinder(Scanner inp)
+    /**
+     * CalcVol_Cylinder is a method used to find the volume of Cylinder
+     * @param radius is used to accept the radius value
+     * @param height is used to accept the height value
+     * @return is used to return the calculated value 
+     */
+    public static double calcVol_Cylinder(double radius,double height)
     {
-        float radius,height,cylinder_vol;
-        System.out.println("Enter the Radius of the base of cylinder :");
-        radius=inp.nextFloat();
-        System.out.println("Enter the Height of the cylinder:");
-        height=inp.nextFloat();
-        cylinder_vol=(float)(3.14159*radius*radius*height);
-        System.out.println("The Volume of Cylinder is :"+cylinder_vol);
+        double cylinder_vol=(double)(3.14159*radius*radius*height);
+        return cylinder_vol;
     }
     
-    static void CalcVol_Cone(Scanner inp)
+    /**
+     * CalcVol_Cone is a method used to find the volume of CaCone
+     * @param radius is used to accept the radius value
+     * @param height is used to accept the height value
+     * @return is used to return the calculated value 
+     */
+    public static double calcVol_Cone(double radius,double height)
     {
-        float height,radius,cone_vol;
-        System.out.println("Enter the Radius of the base of the Cone :");
-        radius=inp.nextFloat();
-        System.out.println("Enter the height of the Cone :");
-        height=inp.nextFloat();
-        cone_vol=(float)((1/3)*(3.14159*radius*radius*height));
-        System.out.println("The Volume of Cone is :"+cone_vol);
+        double cone_vol=(double)((1/3)*(3.14159*radius*radius*height));
+        return cone_vol;
     }
     
-     static void CalcVol_Sphere(Scanner inp)
+    /**
+     * CalcVol_Sphere is a method used to find the volume of Sphere
+     * @param radius is used to accept the radius value
+     * @return is used to return the calculated value 
+     */
+    public static double calcVol_Sphere(double radius)
     {
-        float radius,sphere_vol;
-        System.out.println("Enter the Radius of the Sphere:");
-        radius=inp.nextFloat();
-        sphere_vol=(float)((4/3)*(3.14159*radius*radius));
-        System.out.println("The Volume of the Sphere is :"+sphere_vol);
+        double sphere_vol=(double)((4/3)*(3.14159*radius*radius));
+        return sphere_vol;
     }
 
-    
-     static void Redirect(Scanner inp)
+    /**
+     * Redirect is a method used to redirect the user to main menu or exit the application
+     * @param inp is an object of scanner class
+     */
+     static void redirect(Scanner inp)
     {
         int ch;
         System.out.println("What you want to do :");
@@ -98,14 +105,19 @@ public class ThreeDimensionVolume {
                  System.exit(0);
             default:
                  System.out.println("Invalid Entry");
-                 Redirect(inp);
+                 redirect(inp);
                  
         }  
     }
     
+    /**
+     * This main method displays a menu with different options given to user to choose 
+     * one shape at a time, takes the input from the user and calls all the methods present in class with a switch case
+     * @param args 
+     */
     public static void main(String args[])
     {
-         int ch;
+       int ch;
        Scanner inp=new Scanner(System.in);
        do{
        System.out.println("Select the Shape you want to find the Volume of ");
@@ -118,28 +130,67 @@ public class ThreeDimensionVolume {
        System.out.println("7. Exit this menu");
        System.out.println(" Enter your Choice :- ");
        ch=inp.nextInt();
+       /**
+        * switch case is used to select the user choice from the given menu 
+        */
        switch(ch)
        {
            case 1:
-               CalcVol_Cube(inp);
-               break;
+                double side,cube_vol;
+                System.out.println("Enter the side of the Cube :");
+                side = inp.nextFloat();
+                cube_vol=calcVol_Cube(side);
+                System.out.println("The Volume of the cube is : "+cube_vol);
+                break;
            case 2:
-               CalcVol_Cuboid(inp);
-               break;
+                double c_length,c_width,c_height,cuboid_vol;
+                System.out.println("Enter the Length of the Cuboid");
+                c_length=inp.nextFloat();
+                System.out.println("Enter the Width of the Cuboid");
+                c_width=inp.nextFloat();
+                System.out.println("Enter the Height of the Cuboid");
+                c_height=inp.nextFloat();
+                cuboid_vol = calcVol_Cuboid(c_length,c_width,c_height);
+                System.out.println("The Volume of Cuboid is : "+cuboid_vol);
+                break;
            case 3:
-               CalcVol_Triangular_Prism(inp);
-               break;
+                double p_base,p_height,p_width,prism_vol;
+                System.out.println("Enter the Base of the prism :");
+                p_base=inp.nextFloat();
+                System.out.println("Enter the Height of the prism :");
+                p_height=inp.nextFloat();
+                System.out.println("Enter the Width of the prism :");
+                p_width=inp.nextFloat();
+                prism_vol = calcVol_Triangular_Prism(p_base,p_height,p_width);;
+                System.out.println("The Volume of prism is :"+prism_vol);
+                break;
            case 4:
-               CalcVol_Cylinder(inp);
-               break;
+                double cy_radius,cy_height,cylinder_vol;
+                System.out.println("Enter the Radius of the base of cylinder :");
+                cy_radius=inp.nextFloat();
+                System.out.println("Enter the Height of the cylinder:");
+                cy_height=inp.nextFloat();
+                cylinder_vol = calcVol_Cylinder(cy_radius,cy_height);
+                System.out.println("The Volume of Cylinder is :"+cylinder_vol);
+                break;
            case 5:
-               CalcVol_Cone(inp);
-               break;
+                double co_height,co_radius,cone_vol;
+                System.out.println("Enter the Radius of the base of the Cone :");
+                co_radius=inp.nextFloat();
+                System.out.println("Enter the height of the Cone :");
+                co_height=inp.nextFloat();
+                cone_vol=calcVol_Cone(co_radius,co_height);
+                System.out.println("The Volume of Cone is :"+cone_vol);
+                break;
            case 6:
-               CalcVol_Sphere(inp);
-               break;
+                double s_radius,sphere_vol;
+                System.out.println("Enter the Radius of the Sphere:");
+                s_radius=inp.nextFloat();
+                sphere_vol=calcVol_Sphere(s_radius);
+                System.out.println("The Volume of the Sphere is :"+sphere_vol);
+                break;
            case 7:
-                 Redirect(inp);
+                 redirect(inp);
                  break;
            default:
                System.out.println("Invalid Choice! Please Retry");
