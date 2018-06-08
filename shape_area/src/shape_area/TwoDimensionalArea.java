@@ -13,6 +13,10 @@ import java.util.Scanner;
  */
 public class TwoDimensionalArea {
        
+    /**
+     * This method calculates the area of triangle when valid input is given.
+     * @param inp is an object of scanner class which takes the user input.
+     */
     static void calcArea_Triangle(Scanner inp)
     {
         float base,height;
@@ -26,6 +30,11 @@ public class TwoDimensionalArea {
         
     }
     
+    /**
+     *This method calculates the area of square when valid input is given.
+     * @param inp is an object of scanner class which takes the user input for
+     * a diagonal or side of square.
+     */
     static void calcArea_Square(Scanner inp)
     {
         float side,diagonal,sq_area;
@@ -53,6 +62,10 @@ public class TwoDimensionalArea {
         
     }
     
+    /**
+     *This method calculates the area of rectangle when valid input is given.
+     * @param inp is an object of scanner class which takes the user input.
+     */
     static void calcArea_Rectangle(Scanner inp)
     {
         float diagonal,length,width,rect_area;
@@ -85,6 +98,11 @@ public class TwoDimensionalArea {
         
     }
     
+    /**
+     * *This method calculates the area of rhombus when valid input is given.
+     * @param inp is an object of scanner class which takes the user input for 
+     * diagonal or altitude of the rhombus.
+     */
     static void calcArea_Rhombus(Scanner inp)
     {
         float altitude,diagonal1,diagonal2,side,rhom_area;
@@ -116,6 +134,10 @@ public class TwoDimensionalArea {
         }
     }
     
+    /**
+     * *This method calculates the area of parallelogram when valid input is given.
+     * @param inp is an object of scanner class which takes the user input.
+     */
     static void calcArea_Parallelogram(Scanner inp)
     {
         float altitude,side,para_area;
@@ -128,6 +150,10 @@ public class TwoDimensionalArea {
         
     }
     
+    /**
+     **This method calculates the area of circle when valid input is given.
+     * @param inp is an object of scanner class which takes the radius as user input.
+     */
     static void calcArea_Circle(Scanner inp)
     {
         float radius,circle_area;
@@ -137,6 +163,10 @@ public class TwoDimensionalArea {
         System.out.println(" The Area of the Circle is : "+circle_area);      
     }
     
+    /**
+     * This method lets user to continue with the calculation or exit from the application.
+     * @param inp is an object of scanner class which takes the user input.
+     */
     static void redirect(Scanner inp)
     {
         int ch;
@@ -157,6 +187,10 @@ public class TwoDimensionalArea {
         }    
     }
     
+    /* This main method displays a menu with different options given to user to choose 
+     * one shape at a time and calls all the methods present in class with a switch case. 
+     * @param args the command line arguements
+     */
     public static void main(String args[]){
        int ch;
        Scanner inp=new Scanner(System.in);
