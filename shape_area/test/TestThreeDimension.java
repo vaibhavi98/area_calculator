@@ -52,10 +52,10 @@ public class TestThreeDimension {
      }
       @Test
      public void Calc_SArea_Cuboid() {
-        assertEquals(862.0,thd. Calc_SArea_Cuboid(11.0,12.0,13.0),0.1);
-        assertEquals(26.6,thd. Calc_SArea_Cuboid(1.1,2.2,3.3),0.1);
-        assertEquals(570.0,thd. Calc_SArea_Cuboid(5,10.5,15.0),0.1);
-        assertEquals(384.0,thd. Calc_SArea_Cuboid(8.0,8.0,8.0),0.1);
+        assertEquals(862.0,thd.Calc_SArea_Cuboid(11.0,12.0,13.0),0.1);
+        assertEquals(26.6,thd.Calc_SArea_Cuboid(1.1,2.2,3.3),0.1);
+        assertEquals(570.0,thd.Calc_SArea_Cuboid(5,10.5,15.0),0.1);
+        assertEquals(384.0,thd.Calc_SArea_Cuboid(8.0,8.0,8.0),0.1);
      }
       @Test
      public void Calc_SArea_Triangular_Prism() {
