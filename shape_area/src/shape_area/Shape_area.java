@@ -8,12 +8,14 @@ package shape_area;
 import java.util.Scanner;
 
 /**
- *
+ * This is the main class which creates objects of other classes and calls them.
  * @author Vaibhavi
  */
 public class Shape_area {
 
     /**
+     * This main method displays a menu which gives user options to calculate area of 2D shapes or 
+     * area and volume of 3D shapes.
      * @param args the command line arguments
      */
     public static void main(String[] args) {
