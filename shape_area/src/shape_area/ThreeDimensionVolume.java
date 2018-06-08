@@ -45,8 +45,7 @@ public class ThreeDimensionVolume {
      */
     public static double calcVol_Triangular_Prism(double base, double height, double width)
     {
-        double basearea=(double)(0.5*base*height);
-        double prism_vol=(double)(width*basearea);
+        double prism_vol=(double)(0.5*base*height*width);
         return prism_vol;
     }
     
