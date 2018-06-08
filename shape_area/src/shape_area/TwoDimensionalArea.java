@@ -7,160 +7,91 @@ package shape_area;
 
 import java.util.Scanner;
 
-/**
- *
+ /**
+ * The class contains various methods to calculate area of different shapes such as triangle,square,
+ * rectangle,circle,parallelogram and rhombus.
  * @author Vaibhavi
  */
 public class TwoDimensionalArea {
        
-    /**
-     * This method calculates the area of triangle when valid input is given.
-     * @param inp is an object of scanner class which takes the user input.
-     */
-    static void calcArea_Triangle(Scanner inp)
+     /**
+      * Calculates the area of triangle when the base and height are passed to the method.
+      * @param base accepts the base value of triangle from user.
+      * @param height accepts the height value of triangle from user
+      * @return this method returns the area of triangle.
+      */
+    public static double calcArea_Triangle(double base,double height)
     {
-        float base,height;
-        System.out.println("Enter the Base of the triangle :");
-        base=inp.nextFloat();
-        System.out.println("Enter the height of the triangle: ");
-        height=inp.nextFloat();
-        float t_area=(float)(0.5*base*height);
-        System.out.println("The Area of the Triangle is :"+t_area);
-      
-        
+        double t_area=(float)(0.5*base*height);
+        return t_area;
+       
     }
+     /**
+      * Calculates the area of square when its side is passed to the method.
+      * @param side accepts the side value of square from user
+      * @return this method returns the area of square.
+      */
+    public static double calcArea_Square(double side)
+    {
+          double sq_area=(double)(side*side);
+          return sq_area;
+    }
+    /**
+     * Calculates the area of square when its diagonal is passed to the method.
+     * @param diagonal accepts the diagonal value of square from user
+     * @return this method returns the area of square.
+     */
+    public static double calcArea_SquareDiagonal(double diagonal)
+    {
+         double sq_area=(double)(0.5*(diagonal*diagonal));
+          return sq_area;
+                
+    }
+     
+    /**
+     * Calculates the area of rectangle when its length and width are passed to the method.
+     * @param length accepts the length value of rectangle from user.
+     * @param width accepts the width value of rectangle from user.
+     * @return this method returns the area of rectangle.
+     */
+    public static double calcArea_Rectangle(double length,double width)
+    {
+       double rect_area=(double)(length*width);
+       return rect_area;
+    }
+    /**
+     * Calculates the area of rhombus when its side and altitude are passed to the method.
+     * @param side accepts the side value of Rhombus from user.
+     * @param altitude accepts the altitude value of rhombus from user.
+     * @return this method returns the area of rhombus.
+     */    
+    
+    public static double calcArea_Rhombus(double side,double altitude)
+    {
+         double rhom_area=(float)(altitude*side);
+         return rhom_area;
+     }
     
     /**
-     *This method calculates the area of square when valid input is given.
-     * @param inp is an object of scanner class which takes the user input for
-     * a diagonal or side of square.
+     * Calculates the area of parallelogram when its side and altitude are passed to the method.
+     * @param altitude accepts the side value of parallelogram from user.
+     * @param side accepts the altitude value of parallelogram from user.
+     * @return this method returns the area of parallelogram.
      */
-    static void calcArea_Square(Scanner inp)
+    public static double calcArea_Parallelogram(double altitude,double side)
     {
-        float side,diagonal,sq_area;
-        int ch;
-        System.out.println("How would you like to calculate the area :");
-        System.out.println("1.Using Diagonal ");
-        System.out.println("2.Using Side ");
-        ch=inp.nextInt();
-        switch(ch){
-            case 1:
-                System.out.println("Enter the value of the diagonal");
-                diagonal=inp.nextFloat();
-                sq_area=(float)(0.5*(diagonal*diagonal));
-                System.out.println("The Area of the Square is : "+sq_area);
-                break;
-            case 2:
-                System.out.println("Enter the Value of the side of the square : ");
-                side=inp.nextFloat();
-                sq_area=(float)(side*side);
-                System.out.println("The Area of the Square is : "+sq_area);
-                break;  
-            default:
-                System.out.println("Wrong Value Entered! Please Try Again.");
-        }
-        
-    }
-    
-    /**
-     *This method calculates the area of rectangle when valid input is given.
-     * @param inp is an object of scanner class which takes the user input.
-     */
-    static void calcArea_Rectangle(Scanner inp)
+        double para_area=(double)(altitude * side);
+        return para_area;
+     }
+     /**
+      * Calculates the area of circle when its radius is passed to the method.
+      * @param radius accepts the radius value of circle from user.
+      * @return this method returns the area of circle.
+      */
+    public static double calcArea_Circle(double radius)
     {
-        float diagonal,length,width,rect_area;
-        int ch;
-        System.out.println("How would You like to calculate the Area : ");
-        System.out.println("1. Using Length and Diagonal");
-        System.out.println("2. Using Length and Width");
-        ch=inp.nextInt();
-        switch(ch)
-        {
-            case 1:
-                System.out.println("Enter the Length of the Rectangle :");
-                length=inp.nextFloat();
-                System.out.println("Enter the Diagonal of the Rectangle :");
-                diagonal=inp.nextFloat();
-                rect_area=(float)( length*(Math.sqrt((diagonal*diagonal)-(length*length))));
-                System.out.println(" The Area of the Rectangle is :"+rect_area);
-                break;
-            case 2:
-                System.out.println("Enter the length of the Rectangle");
-                length=inp.nextFloat();
-                System.out.println("Enter the width of the Rectangle");
-                width=inp.nextFloat();
-                rect_area=(float)(length*width);
-                System.out.println(" The Area of the Rectangle is :"+rect_area);
-                break;
-            default:
-                System.out.println("Wrong Value Entered! Please Try Again.");      
-        }
-        
-    }
-    
-    /**
-     * *This method calculates the area of rhombus when valid input is given.
-     * @param inp is an object of scanner class which takes the user input for 
-     * diagonal or altitude of the rhombus.
-     */
-    static void calcArea_Rhombus(Scanner inp)
-    {
-        float altitude,diagonal1,diagonal2,side,rhom_area;
-        int ch;
-        System.out.println("How Would you like to Calculate the area :");
-        System.out.println("1. Using Side and Altitude ");
-        System.out.println("2. Using Diagonals ");
-        ch=inp.nextInt();
-        switch(ch)
-        {
-            case 1:
-                System.out.println("Enter the Side of the Rhombus : ");
-                side=inp.nextFloat();
-                System.out.println("Enter the Altitude of the Rhombus: ");
-                altitude=inp.nextFloat();
-                rhom_area=(float)(altitude*side);
-                System.out.println("The Area of the Rhombus is :"+rhom_area);
-                break;
-            case 2:
-                System.out.println("Enter the 1st Diagonal of the Rhombus :");
-                diagonal1=inp.nextFloat();
-                System.out.println("Enter the 2nd Diagonal of the Rhombus :");
-                diagonal2=inp.nextFloat();
-                rhom_area=(float)(0.5*(diagonal1*diagonal2));
-                System.out.println(" The Area of the Rhombus is : "+rhom_area);
-                break;
-            default:
-                System.out.println("Invalid Value Entered. Please Try Again");
-        }
-    }
-    
-    /**
-     * *This method calculates the area of parallelogram when valid input is given.
-     * @param inp is an object of scanner class which takes the user input.
-     */
-    static void calcArea_Parallelogram(Scanner inp)
-    {
-        float altitude,side,para_area;
-        System.out.println("Enter the altitude :");
-        altitude=inp.nextFloat();
-        System.out.println("Enter the Side : ");
-        side=inp.nextFloat();
-        para_area=(float)(altitude * side);
-        System.out.println(" The Area of the Parellelogram is :"+para_area);
-        
-    }
-    
-    /**
-     **This method calculates the area of circle when valid input is given.
-     * @param inp is an object of scanner class which takes the radius as user input.
-     */
-    static void calcArea_Circle(Scanner inp)
-    {
-        float radius,circle_area;
-        System.out.println("Enter the Radius of the Circle :");
-        radius=inp.nextFloat();
-        circle_area=(float)(3.14159*radius*radius);
-        System.out.println(" The Area of the Circle is : "+circle_area);      
+        double circle_area=(double)(3.14159*radius*radius);
+        return circle_area;      
     }
     
     /**
@@ -197,36 +128,77 @@ public class TwoDimensionalArea {
        do{
        System.out.println("Select the Shape you want to find the area of ");
        System.out.println("1. Triangle");
-       System.out.println("2. Square");
-       System.out.println("3. Rectangle");
-       System.out.println("4. Rhombus");
-       System.out.println("5. Parallelogram");
-       System.out.println("6. Circle");
-       System.out.println("7. Exit this menu");
+       System.out.println("2. Square(using side)");
+       System.out.println("3. Square(using diagonal)");
+       System.out.println("4. Rectangle");
+       System.out.println("5. Rhombus");
+       System.out.println("6. Parallelogram");
+       System.out.println("7. Circle");
+       System.out.println("8. Exit this menu");
        System.out.println(" Enter your Choice :- ");
        ch=inp.nextInt();
        switch(ch)
        {
            case 1:
-               calcArea_Triangle(inp);
+               double base,height,t_area;
+               System.out.println("Enter the Base of the triangle :");
+               base=inp.nextFloat();
+               System.out.println("Enter the height of the triangle: ");
+               height=inp.nextFloat();
+               t_area=calcArea_Triangle(base,height);
+               System.out.println("The Area of the Triangle is :"+t_area);
                break;
            case 2:
-               calcArea_Square(inp);
+                double sq_area,side;
+                System.out.println("Enter the Value of the side of the square : ");
+                side=inp.nextFloat();
+                sq_area=calcArea_Square(side);
+                System.out.println("The Area of the Square is : "+sq_area);
                break;
-           case 3:
-               calcArea_Rectangle(inp);
-               break;
+           case 3: 
+                double diagonal;
+                System.out.println("Enter the Value of the diagonal of the square : ");
+                diagonal=inp.nextDouble();
+                sq_area=calcArea_SquareDiagonal(diagonal);
+                System.out.println("The Area of the Square is : "+sq_area);
+                break;
+               
            case 4:
-               calcArea_Rhombus(inp);
-               break;
+                double length,width,rect_area;
+                System.out.println("Enter the length of the Rectangle");
+                length=inp.nextDouble();
+                System.out.println("Enter the width of the Rectangle");
+                width=inp.nextDouble();
+                rect_area=calcArea_Rectangle(length,width);
+                System.out.println(" The Area of the Rectangle is :"+rect_area);
+                break;
            case 5:
-               calcArea_Parallelogram(inp);
-               break;
+                double altitude,rhom_area;
+                System.out.println("Enter the Side of the Rhombus : ");
+                side=inp.nextFloat();
+                System.out.println("Enter the Altitude of the Rhombus: ");
+                altitude=inp.nextFloat();
+                rhom_area=calcArea_Rhombus(side,altitude);
+                System.out.println("The Area of the Rhombus is :"+rhom_area);
+                break;
            case 6:
-               calcArea_Circle(inp);
+               double para_area;
+               System.out.println("Enter the altitude :");
+               altitude=inp.nextDouble();
+               System.out.println("Enter the Side : ");
+               side=inp.nextDouble();
+               para_area=calcArea_Parallelogram(altitude,side);
+                System.out.println(" The Area of the Parellelogram is :"+para_area);        
+               break;
+           case 7:
+               double radius,circle_area;
+               System.out.println("Enter the Radius of the Circle :");
+               radius=inp.nextDouble();
+               circle_area=calcArea_Circle(radius);
+               System.out.println(" The Area of the Circle is : "+circle_area);
                break;
                
-           case 7:
+           case 8:
                redirect(inp);
                break;
            default:
